@@ -1,0 +1,7 @@
+[2022-11-13 12:19:19,158] INFO Creating topic realtime_data with configuration {} and initial partition assignment HashMap(0 -> ArrayBuffer(0)) (kafka.zk.AdminZkClient)
+[2022-11-13 12:19:19,255] INFO [Controller id=0, targetBrokerId=0] Node 0 disconnected. (org.apache.kafka.clients.NetworkClient)
+[2022-11-13 12:19:19,292] INFO [ReplicaFetcherManager on broker 0] Removed fetcher for partitions Set(realtime_data-0) (kafka.server.ReplicaFetcherManager)
+[2022-11-13 12:19:19,405] INFO [LogLoader partition=realtime_data-0, dir=/tmp/kafka-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+[2022-11-13 12:19:19,423] INFO Created log for partition realtime_data-0 in /tmp/kafka-logs/realtime_data-0 with properties {} (kafka.log.LogManager)
+[2022-11-13 12:19:19,424] INFO [Partition realtime_data-0 broker=0] No checkpointed highwatermark is found for partition realtime_data-0 (kafka.cluster.Partition)
+[2022-11-13 12:19:19,425] INFO [Partition realtime_data-0 broker=0] Log loaded for partition realtime_data-0 with initial high watermark 0 (kafka.cluster.Partition)

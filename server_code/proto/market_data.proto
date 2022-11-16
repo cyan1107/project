@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message MarketDataRequest {
+    string trigger = 1;
+}
+
+message MarketDataResponse {
+    float price = 1;
+    float vol = 2;
+    string side = 3;
+}
+
+service MarketData {
+    rpc ListenMarketData (MarketDataRequest) returns (stream MarketDataResponse){};
+}
