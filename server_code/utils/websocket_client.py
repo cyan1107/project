@@ -1,5 +1,4 @@
 from __future__ import print_function
-import os
 import json
 import base64
 import hmac
@@ -11,13 +10,11 @@ from kafka import KafkaProducer
 from utils.config import REALTIME_DATA
 import logging
 
-# PASSPHARSE = os.environ["pass_pharse"]
-# API_SECRET = os.environ["secret"]
-# API_KEY = os.environ["key"]
+PASSPHARSE = os.environ["pass_pharse"]
+API_SECRET = os.environ["secret"]
+API_KEY = os.environ["key"]
 
-PASSPHARSE = "u09irmmo81"
-API_SECRET = "Mh+26roMz1ujhl5BBUJHYEk7H7BF0Q7Pr9uTOCRYMA5vONmwpMlE5bb6zAbFWNc0rMl1rQIL6mMYHnV30cwrZA=="
-API_KEY = "ea528fa582c6882fc260cbeafca44edd"
+
 
 
 def get_auth_headers(timestamp, message, api_key, secret_key, passphrase):
@@ -151,7 +148,7 @@ class WebsocketClient:
         if self.should_print:
             print(msg)
         if "side" in msg:
-            send_msg = "%s|%s|%s" % (msg["side"], msg["price"], msg["size"])
+            send_msg = "%s|%s|%s|%s" % (msg["side"], msg["price"], msg["size"],msg["time"])
             self.msg_producer.send(REALTIME_DATA, bytes(send_msg, "utf-8"))
 
 
